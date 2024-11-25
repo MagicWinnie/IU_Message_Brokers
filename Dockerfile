@@ -21,3 +21,6 @@ CMD ["python", "-m", "services.filter.service"]
 
 FROM python-base as screaming
 CMD ["python", "-m", "services.screaming.service"]
+
+FROM python-base as publish
+CMD ["python", "-m", "services.publish.service"]
