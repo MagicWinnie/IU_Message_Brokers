@@ -4,7 +4,7 @@ import pika
 from fastapi import FastAPI, HTTPException, status
 
 from config import settings
-from services.api.schemas import ProcessMessageRequest
+from services.schemas import Message
 
 OUTPUT_QUEUE_NAME = "api2filter"
 
@@ -36,7 +36,7 @@ app = FastAPI(lifespan=lifespan)
 
 
 @app.post("/process-message")
-def process_message(body: ProcessMessageRequest):
+def process_message(body: Message):
     try:
         channel.basic_publish(
             exchange="",

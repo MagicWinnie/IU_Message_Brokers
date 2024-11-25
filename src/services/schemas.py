@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
 
-class ProcessMessageRequest(BaseModel):
+class Message(BaseModel):
     message_text: str
     user_alias: str
