@@ -15,3 +15,6 @@ WORKDIR /app/src
 
 FROM python-base as api
 CMD ["uvicorn", "services.api.service:app",  "--host", "0.0.0.0", "--port", "8000"]
+
+FROM python-base as filter
+CMD ["python", "-m", "services.filter.service"]
