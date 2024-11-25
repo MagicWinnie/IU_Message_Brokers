@@ -3,8 +3,8 @@ import pika
 from config import settings
 from services.schemas import Message
 
-INPUT_QUEUE_NAME = "api2filter"
-OUTPUT_QUEUE_NAME = "filter2screaming"
+INPUT_QUEUE_NAME = settings.QUEUE1
+OUTPUT_QUEUE_NAME = settings.QUEUE2
 BLACKLIST_WORDS: set[str] = set()
 
 

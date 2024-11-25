@@ -3,8 +3,8 @@ import pika
 from config import settings
 from services.schemas import Message
 
-INPUT_QUEUE_NAME = "filter2screaming"
-OUTPUT_QUEUE_NAME = "screaming2publish"
+INPUT_QUEUE_NAME = settings.QUEUE2
+OUTPUT_QUEUE_NAME = settings.QUEUE3
 
 
 def callback(ch, method, properties, body):
