@@ -18,3 +18,6 @@ CMD ["uvicorn", "services.api.service:app",  "--host", "0.0.0.0", "--port", "800
 
 FROM python-base as filter
 CMD ["python", "-m", "services.filter.service"]
+
+FROM python-base as screaming
+CMD ["python", "-m", "services.screaming.service"]

@@ -16,12 +16,15 @@ def callback(ch, method, properties, body):
 
         message_text_set = set(message.message_text.lower().split())
         if not message_text_set.intersection(BLACKLIST_WORDS):
+            print(f"Sending the {message=} to output queue")
             ch.basic_publish(
                 exchange="",
                 routing_key=OUTPUT_QUEUE_NAME,
                 body=message.model_dump_json(),
                 properties=pika.BasicProperties(delivery_mode=2)
             )
+        else:
+            print(f"Blocking the {message=}")
     except Exception as e:
         print(f"Error while processing message {body=}: {str(e)}")
     finally:
