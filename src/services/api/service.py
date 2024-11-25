@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from src.services.api.schemas import ProcessMessageRequest
+from services.api.schemas import ProcessMessageRequest
 
 app = FastAPI()
 
