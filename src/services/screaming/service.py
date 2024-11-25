@@ -1,5 +1,3 @@
-import json
-
 import pika
 
 from config import settings
@@ -11,7 +9,7 @@ OUTPUT_QUEUE_NAME = "screaming2publish"
 
 def callback(ch, method, properties, body):
     try:
-        message = Message(**json.loads(body))
+        message = Message.model_validate_json(body)
         message.message_text = message.message_text.upper()
         print(f"Sending the {message=} to output queue")
         ch.basic_publish(

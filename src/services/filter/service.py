@@ -1,5 +1,3 @@
-import json
-
 import pika
 
 from config import settings
@@ -12,7 +10,7 @@ BLACKLIST_WORDS: set[str] = set()
 
 def callback(ch, method, properties, body):
     try:
-        message = Message(**json.loads(body))
+        message = Message.model_validate_json(body)
 
         message_text_set = set(message.message_text.lower().split())
         if not message_text_set.intersection(BLACKLIST_WORDS):
