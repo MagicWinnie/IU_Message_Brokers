@@ -10,6 +10,13 @@ It can be viewed on YouTube: <https://youtu.be/AJVNYYS_Fjg>
 TODO
 ```
 
+## Usage
+
+1. Fill out `.env` file based on the provided example file `.env.sample`
+2. Run RabbitMQ: `docker compose up --build -d rabbitmq`
+3. When RabbitMQ starts, run the services: `docker compose up --build -d api filter screaming publish`
+4. Open Swagger IU at <http://localhost:8932/docs>
+
 ## Team members
 
 Team 24:
