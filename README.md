@@ -8,9 +8,9 @@ It can be viewed on YouTube: <https://youtu.be/AJVNYYS_Fjg>
 
 ```txt
 .
-├── Dockerfile
+├── Dockerfile  # build the project for Docker
 ├── README.md  # you are reading this file :)
-├── docker-compose.yml
+├── docker-compose.yml  # launching RabbitMQ and servies in Docker containers
 ├── requirements.txt  # used external packages
 └── src  # where the source code lies
     ├── config.py  # various settings for, e.g., RabbitMQ and SMTP
