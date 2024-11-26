@@ -21,6 +21,7 @@ def callback(ch, method, properties, body):
         msg["To"] = ", ".join(settings.EMAIL_RECEIVERS)
 
         with smtplib.SMTP(settings.SMTP_SERVER, settings.SMTP_PORT) as server:
+            server.debuglevel(1)
             server.starttls()
             server.ehlo()
             server.login(settings.SMTP_EMAIL, settings.SMTP_PASSWORD)
