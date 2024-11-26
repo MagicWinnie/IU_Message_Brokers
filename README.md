@@ -7,7 +7,24 @@ It can be viewed on YouTube: <https://youtu.be/AJVNYYS_Fjg>
 ## Project structure
 
 ```txt
-TODO
+.
+├── Dockerfile
+├── README.md  # you are reading this file :)
+├── docker-compose.yml
+├── requirements.txt  # used external packages
+└── src  # where the source code lies
+    ├── config.py  # various settings for, e.g., RabbitMQ and SMTP
+    ├── schemas.py  # Pydantic model for Message
+    └── services  # each service is in a separate folder
+        ├── api
+        │   └── service.py   # service.py gets launched from each folder
+        ├── filter
+        │   ├── blacklist.txt  # blacklisted words
+        │   └── service.py
+        ├── publish
+        │   └── service.py
+        └── screaming
+            └── service.py
 ```
 
 ## Usage
