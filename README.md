@@ -1,10 +1,14 @@
 # Project implementing Event Driven Architecture Pattern
 
-## Project demo
+## Demo
 
 It can be viewed on YouTube: <https://youtu.be/LlTi-yFkNus>
 
-## Project structure
+## Report
+
+TODO
+
+## Structure
 
 ```txt
 .
