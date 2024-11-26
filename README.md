@@ -2,7 +2,7 @@
 
 ## Project demo
 
-It can be viewed on YouTube: <https://youtu.be/AJVNYYS_Fjg>
+It can be viewed on YouTube: <https://youtu.be/LlTi-yFkNus>
 
 ## Project structure
 
