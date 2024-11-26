@@ -2,7 +2,7 @@ import pika
 from fastapi import FastAPI, HTTPException, status
 
 from config import settings
-from services.schemas import Message
+from schemas import Message
 
 OUTPUT_QUEUE_NAME = settings.QUEUE1
 

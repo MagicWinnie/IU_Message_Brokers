@@ -1,7 +1,7 @@
 import pika
 
 from config import settings
-from services.schemas import Message
+from schemas import Message
 
 INPUT_QUEUE_NAME = settings.QUEUE2
 OUTPUT_QUEUE_NAME = settings.QUEUE3

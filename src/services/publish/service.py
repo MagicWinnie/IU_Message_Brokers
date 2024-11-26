@@ -4,7 +4,7 @@ from email.mime.text import MIMEText
 import pika
 
 from config import settings
-from services.schemas import Message
+from schemas import Message
 
 INPUT_QUEUE_NAME = settings.QUEUE3
 
