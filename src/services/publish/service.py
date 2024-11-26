@@ -20,7 +20,6 @@ def callback(ch, method, properties, body):
         msg["From"] = settings.SMTP_EMAIL
         msg["To"] = ", ".join(settings.EMAIL_RECEIVERS)
 
-        print(settings.SMTP_SERVER, settings.SMTP_PORT)
         with smtplib.SMTP(settings.SMTP_SERVER, settings.SMTP_PORT, timeout=10) as server:
             server.starttls()
             server.ehlo()
