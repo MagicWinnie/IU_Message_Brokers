@@ -4,6 +4,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     RABBITMQ_HOST: str = "localhost"
+    RABBITMQ_PORT: int = 5672
+
     WORDS_BLACKLIST_PATH: FilePath
 
     QUEUE1: str = "api2filter"

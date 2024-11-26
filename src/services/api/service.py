@@ -13,7 +13,9 @@ app = FastAPI()
 @app.post("/process-message")
 def process_message(body: Message):
     try:
-        connection = pika.BlockingConnection(pika.ConnectionParameters(host=settings.RABBITMQ_HOST))
+        connection = pika.BlockingConnection(
+            pika.ConnectionParameters(host=settings.RABBITMQ_HOST, port=settings.RABBITMQ_PORT)
+        )
         channel = connection.channel()
         channel.queue_declare(queue=OUTPUT_QUEUE_NAME, durable=True)
 

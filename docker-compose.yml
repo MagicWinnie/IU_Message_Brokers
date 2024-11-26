@@ -73,8 +73,9 @@ services:
     depends_on:
       rabbitmq:
         condition: service_healthy
-    networks:
-      - rabbit-network
+    # networks:
+    #   - rabbit-network
+    network_mode: host
 
 networks:
   rabbit-network:
