@@ -14,7 +14,12 @@ The system has an event-driven architecture; messages are translated from one se
 ## Load-Testing and Performance Report
 
 Here are screenshots of Locust showing load testing of Pipes and Filters and RabbitMQ:
+
+<center>Locust with Pipes and Filters</center>
+
 ![Load Testing of Pipes and Filters](media/locust_pipes_and_filters.jpg)
+
+<center>Locust with RabbitMQ</center>
 
 ![Load Testing of RabbitMQ](media/locust_rabbitmq.jpg)
 
