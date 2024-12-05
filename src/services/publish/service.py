@@ -1,29 +1,19 @@
-import smtplib
-from email.mime.text import MIMEText
-
 import pika
 
 from config import settings
 from schemas import Message
 
+from services.publish.mock_publisher import MockPublisher
+
+
 INPUT_QUEUE_NAME = settings.QUEUE3
+publisher = MockPublisher()
 
 
 def callback(ch, method, properties, body):
     try:
         message = Message.model_validate_json(body)
-
-        print(f"Sending the {message=} to emails={settings.EMAIL_RECEIVERS}")
-
-        msg = MIMEText(f"From user: {message.user_alias}\nMessage: {message.message_text}")
-        msg["Subject"] = "Message on SoftArch from Team-24"
-        msg["From"] = settings.SMTP_EMAIL
-        msg["To"] = ", ".join(settings.EMAIL_RECEIVERS)
-
-        with smtplib.SMTP_SSL(settings.SMTP_SERVER, settings.SMTP_PORT, timeout=3) as server:
-            server.ehlo()
-            server.login(settings.SMTP_EMAIL, settings.SMTP_PASSWORD)
-            server.sendmail(settings.SMTP_EMAIL, settings.EMAIL_RECEIVERS, msg.as_string())
+        publisher.publish(message)
     except Exception as e:
         print(f"Error while processing message {body=}: {str(e)}")
     finally:
