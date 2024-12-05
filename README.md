@@ -6,7 +6,7 @@ It can be viewed on YouTube: <https://youtu.be/LlTi-yFkNus>
 
 ## Report
 
-[Report.md](https://github.com/MagicWinnie/IU_Message_Brokers/edit/master/Report.md)
+[Report.md](https://github.com/MagicWinnie/IU_Message_Brokers/blob/master/Report.md)
 
 ## Structure
 
