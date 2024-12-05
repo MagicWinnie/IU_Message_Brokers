@@ -3,11 +3,11 @@ import pika
 from config import settings
 from schemas import Message
 
-from services.publish.mock_publisher import MockPublisher
+from services.publish.publisher import Publisher
 
 
 INPUT_QUEUE_NAME = settings.QUEUE3
-publisher = MockPublisher()
+publisher = Publisher()
 
 
 def callback(ch, method, properties, body):
